@@ -7,3 +7,5 @@ I detta projekt har jag tränat en model på inlägg på subredditen LifeProTips
 * **train.py** - Tränar en modell på data i data.txt.
 * **model_bot.py** - Innehåller funktioner för att generera text via modellen, och för att se om den genererade texten finns i data.txt
 * **bot.py** - Använder funktionerna i **model_bot.py** och lägger upp inlägg på Reddit under godtyckliga intervall.
+
+## Kunna återskapa -- Problem och lösningar -- Annorlunda om en gång till -- Utveckla projektet.
