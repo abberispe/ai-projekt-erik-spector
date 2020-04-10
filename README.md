@@ -14,5 +14,5 @@ För att kunna använda denna bot på ditt egna reddit konto, måste du skapa en
 ## Problems and solutions
 Ett problem jag stötte på när jag skapade denna bot var att den ofta skapade alldeles för långa inlägg. Den kunde fortsätta i flera hundra ord, ofta med många upprepningar. Jag löste detta genom att skapa flera inlägg vid varje cykel, och välja den som var kortast.
 
-## Utveckla projektet.
+## Future developments
 Projektet kan till exempel utvecklas genom att få botten att svara på kommentarer den får på sitt inlägg. 
