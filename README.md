@@ -10,6 +10,10 @@ I detta projekt har jag tränat en model på inlägg på subredditen LifeProTips
 
 ## Usage
 För att kunna använda denna bot på ditt egna reddit konto, måste du skapa en Reddit applikation på sidan [https://www.reddit.com/prefs/apps/](https://www.reddit.com/prefs/apps/). Byt ut mina client-id och client-secret på filen **bot.py** med dina client-id och client-secret som du fick när du skapade applikationen. Byt också ut mina inloggningsuppgifter med dina. Sedan kör du python filen **bot.py** för att köra botten.
+### Dependencies
+* praw ``` pip install praw==6.5.1```
+* gpt_2_simple ``` pip install gpt_2_simple==0.7.1 ```
+* tensorflow 1.14.0 ``` pip install tensorflow==1.14.0```
 
 ## Problems and solutions
 Ett problem jag stötte på när jag skapade denna bot var att den ofta skapade alldeles för långa inlägg. Den kunde fortsätta i flera hundra ord, ofta med många upprepningar. Jag löste detta genom att skapa flera inlägg vid varje cykel, och välja den som var kortast.
