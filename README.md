@@ -16,6 +16,8 @@ För att kunna använda denna bot på ditt egna reddit konto, måste du skapa en
 * gpt_2_simple ``` pip install gpt_2_simple==0.7.1 ```
 * tensorflow 1.14.0 ``` pip install tensorflow==1.14.0```
 
+## How it works
+
 ## Problems and solutions
 Ett problem jag stötte på när jag skapade denna bot var att den ofta skapade alldeles för långa inlägg. Den kunde fortsätta i flera hundra ord, ofta med många upprepningar. Jag löste detta genom att skapa flera inlägg vid varje cykel, och välja den som var kortast.
 
