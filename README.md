@@ -29,7 +29,7 @@ I filen **model_bot.py** finns alla funktioner som sedan används av **bot.py**.
 
 ## Problems and solutions
 * Ett problem jag stötte på när jag skapade denna bot var att den ofta skapade alldeles för långa inlägg. Den kunde fortsätta i flera hundra ord, ofta med många upprepningar. Jag löste detta genom att skapa flera inlägg vid varje cykel, och välja den som var kortast.
-* Ett annat problem som uppstod vid införskaffningen av datan var att biblioteket **praw** bara kunde ge tillbaka 50 inlägg från subredditen "LifeProTips". Detta gjorde att mitt dataset bara var 50 rader lång, och att modellen inte blev bra på att generera inlägg. Jag löste detta genom att låta ett skript köra över en natt, där varje gång ett inlägg las ut på subredditen, la den till en rad i dataset filen. Tillslut blev filen 1000 rader lång, vilket gjorde modellen mycket bättre.
+* Ett annat problem uppstod vid införskaffningen av datan var att biblioteket **praw** bara kunde ge tillbaka 50 inlägg från subredditen "LifeProTips". Detta gjorde att mitt dataset bara var 50 rader lång, och att modellen inte blev bra på att generera inlägg. Jag löste detta genom att låta ett skript köra över en natt, där varje gång ett inlägg las ut på subredditen, la den till en rad i dataset filen. Tillslut blev filen 1000 rader lång, vilket gjorde modellen mycket bättre.
 
 ## Future developments
-Projektet kan till exempel utvecklas genom att få botten att svara på kommentarer den får på sitt inlägg. 
+* Projektet kan till exempel utvecklas genom att få botten att svara på kommentarer den får på sitt inlägg. På reddit kan andra användare kommentera på ditt inlägg, om botten då hade kunnat svara dessa användare, hade den varit mycket mer autentisk. För att träna en sådan modell, skulle man helt enkelt kunna samla in data på hur "Original Posters" (den lägger ut inlägget) svarar på kommentarer den får, både utifrån vad som kommenterades och vad innehållet av inlägget är.
