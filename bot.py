@@ -12,11 +12,6 @@ reddit = praw.Reddit(client_id='G2wVn4hb94fhWw',
                     username='abbspets123',
                     password='qwerty123')
 
-def makeNewPost(title, body): # Skapar post med titel och body
-    reddit.subreddit(subreddit).submit(title, selftext=body)
-    print(title, body)
-    print("New post submitted")
-
 while True:
     new_post_data = model.generate_text()
     makeNewPost(new_post_data["title"], new_post_data["body"])
