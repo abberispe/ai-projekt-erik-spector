@@ -4,6 +4,8 @@ from time import sleep
 
 sleeptime = 600 # Tid mellan posts i sekunder
 
+subreddit = "BotsParadise"
+
 reddit = praw.Reddit(client_id='G2wVn4hb94fhWw',
                     client_secret='XdFNEB-eCSPlwutC0bdm8YgsUUo',
                     user_agent='abbspets',
@@ -11,7 +13,7 @@ reddit = praw.Reddit(client_id='G2wVn4hb94fhWw',
                     password='qwerty123')
 
 def makeNewPost(title, body): # Skapar post med titel och body
-    reddit.subreddit("BotsParadise").submit(title, selftext=body)
+    reddit.subreddit(subreddit).submit(title, selftext=body)
     print(title, body)
     print("New post submitted")
 
