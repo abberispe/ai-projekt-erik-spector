@@ -28,7 +28,7 @@ I filen **model_bot.py** finns alla funktioner som sedan används av **bot.py**.
 **bot.py** är filen som kör själva botten. Den autentiserar redditkontot och kör sedan en "while True" loop, som bara kan avslutas genom att avbryta processen. I loopen skapas ett inlägg, postas det inlägget och sedan sover programmet i **sleeptime** sekunder, för att sedan göra samma sak igen.
 
 ## Problems and solutions
-Ett problem jag stötte på när jag skapade denna bot var att den ofta skapade alldeles för långa inlägg. Den kunde fortsätta i flera hundra ord, ofta med många upprepningar. Jag löste detta genom att skapa flera inlägg vid varje cykel, och välja den som var kortast.
+* Ett problem jag stötte på när jag skapade denna bot var att den ofta skapade alldeles för långa inlägg. Den kunde fortsätta i flera hundra ord, ofta med många upprepningar. Jag löste detta genom att skapa flera inlägg vid varje cykel, och välja den som var kortast.
 
 ## Future developments
 Projektet kan till exempel utvecklas genom att få botten att svara på kommentarer den får på sitt inlägg. 
