@@ -14,7 +14,7 @@ reddit = praw.Reddit(client_id='G2wVn4hb94fhWw',
 
 while True:
     new_post_data = model.generate_text()
-    makeNewPost(new_post_data["title"], new_post_data["body"])
+    model.makeNewPost(new_post_data["title"], new_post_data["body"])
     print("Sleeping...")
     sleep(sleeptime)
     print("Awake!")
