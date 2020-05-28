@@ -6,6 +6,11 @@ sess = gpt2.start_tf_sess()
 
 gpt2.load_gpt2(sess)
 
+def makeNewPost(title, body): # Skapar post med titel och body
+    reddit.subreddit(subreddit).submit(title, selftext=body)
+    print(title, body)
+    print("New post submitted")
+
 def check_if_post_exist(string): # Används så att boten inte lägger ut något som redan finns på subredditen LifeProTips
     with open('data.txt') as f:
         datafile = f.readlines()
