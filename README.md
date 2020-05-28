@@ -19,8 +19,8 @@ För att kunna använda denna bot på ditt egna reddit konto, måste du skapa en
 
 ## How it works
 ### Preprocessing
-Innan man ens kan börja skriva någon kod behövs det att man införskaffar data och formaterar det på rätt sätt. I just detta projekt införskaffades datan via biblioteket **praw**. Med det kunde ett program iterera igenom tiotusentals inlägg från subredditen "LifeProTips". Datan formaterades i en txt-fil, där varje rad representerades av ett inlägg på följande sätt:
-**TITLE** \*\*\*\*\* **BODY**
+Innan man ens kan börja skriva någon kod behövs det att man införskaffar data och formaterar det på rätt sätt. I just detta projekt införskaffades datan via biblioteket **praw**. Med det kunde ett program iterera igenom tiotusentals inlägg från subredditen "LifeProTips". Datan formaterades i en txt-fil, där varje rad representerades av ett inlägg på följande sätt:<br>
+**TITLE** \*\*\*\*\* **BODY**<br>
 Detta gjordes eftersom då modelen tränas, ska den använda sig av dessa stjärnor för att kunna separera titel och body.
 ### Functions
 I filen **model_bot.py** finns alla funktioner som sedan används av **bot.py**. Framförallt finns funktionen **generate_text** som genererar fem stycken inlägg, och väljer ut en av dem. Den fungerar genom att använda biblioteket **gpt_2_simple** och den modelen som tränades. När den har skapat fem olika inlägg, itererar den igenom dessa inlägg och ser om de är behöriga inlägg. Alltså att titeln börjas med "LPT:", att de fem stjärnorna finns med i hela texten och att den inte har kopierat något från datafilen. Sedan itererar den igenom de behöriga inläggen och väljer den kortaste. Detta eftersom den kortaste tenderar att vara den mest sammanhängande. Om inga behöriga inlägg finns, returnerar den sig själv. Annars returnerar den inlägget i ett fördelsaktigt format i en dictionary. En annan funktion som finns i **model_bot.py** är **makeNewPost**, som postar inlägget på reddit.
