@@ -24,8 +24,12 @@ Innan man ens kan börja skriva någon kod behövs det att man införskaffar dat
 Detta gjordes eftersom då modellen tränas, ska den använda sig av dessa stjärnor för att kunna separera titel och body.
 ### Functions
 I filen **model_bot.py** finns alla funktioner som sedan används av **bot.py**. Framförallt finns funktionen **generate_text** som genererar fem stycken inlägg, och väljer ut en av dem. Den fungerar genom att använda biblioteket **gpt_2_simple** och den modellen som tränades. När den har skapat fem olika inlägg, itererar den igenom dessa inlägg och ser om de är behöriga inlägg. Alltså att titeln börjas med "LPT:", att de fem stjärnorna finns med i hela texten och att den inte har kopierat något från datafilen. Sedan itererar den igenom de behöriga inläggen och väljer den kortaste. Detta eftersom den kortaste tenderar att vara den mest sammanhängande. Om inga behöriga inlägg finns, returnerar den sig själv. Annars returnerar den inlägget i ett fördelsaktigt format i en dictionary. En annan funktion som finns i **model_bot.py** är **makeNewPost**, som postar inlägget på reddit.
-### The bot
+### The Bot
 **bot.py** är filen som kör själva botten. Den autentiserar redditkontot och kör sedan en "while True" loop, som bara kan avslutas genom att avbryta processen. I loopen skapas ett inlägg, postas det inlägget och sedan sover programmet i **sleeptime** sekunder, för att sedan göra samma sak igen.
+
+### Raspberry PI
+För att hosta denna bot användes en Raspberry PI. Jag använde mig av SSH och Putty för att kunna styra min Raspberry PI CLI direkt på min stationära dator. För att kunna föra över filerna som behövdes till botten använde jag FileZilla. Sedan körde jag botten med CronJob så att botten restartades varje 24 timmar. Detta så att om programmet hade krashat, skulle den fortfarande kunna köra efter ett tag.<br>
+En mer detaljerad guide på hur man skulle kunna köra sin bot på en Raspberry PI finns [här](https://www.gngrninja.com/code/2017/3/24/python-create-discord-bot-on-raspberry-pi) 
 
 ## Problems and solutions
 * Ett problem jag stötte på när jag skapade denna bot var att den ofta skapade alldeles för långa inlägg. Den kunde fortsätta i flera hundra ord, ofta med många upprepningar. Jag löste detta genom att skapa flera inlägg vid varje cykel, och välja den som var kortast.
